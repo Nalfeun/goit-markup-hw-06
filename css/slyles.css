@@ -280,12 +280,12 @@ a.tel:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  padding: 40px;
   width: 528px;
   height: 581px;
   max-height: 100vh;
   overflow-y: auto;
-
+  z-index: 5;
   background-color: var(--background-main-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -299,8 +299,8 @@ a.tel:focus {
 
 .modal-button {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 8px;
+  right: 8px;
 
   display: flex;
   margin-left: auto;
@@ -318,9 +318,9 @@ a.tel:focus {
   transition: border 250ms var(--timing-function);
 }
 
-.modal-button:hover {
+/* .modal-button:hover {
   border: 1px solid var(--accent-color);
-}
+} */
 
 .modal-svg {
   transition: fill 250ms var(--timing-function);
@@ -328,6 +328,193 @@ a.tel:focus {
 
 .modal-button:hover .modal-svg {
   fill: var(--accent-color);
+}
+
+.form-request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.request-title {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--title-text-color);
+}
+
+.request-field {
+  position: relative;
+  display: block;
+  margin-bottom: 28px;
+}
+
+.request-label {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+  transform: translateY(-50%);
+  transition: transform 250ms var(--timing-function);
+}
+
+.request-field:focus-within .request-label {
+  transform: translate(-40px, -38px);
+}
+
+.request-input:not(:placeholder-shown) + .request-label {
+  transform: translate(-40px, -38px);
+}
+
+.request-input {
+  display: block;
+  width: 448px;
+  height: 40px;
+  padding-left: 40px;
+  color: var(--primary-text-color);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: border-color 250ms var(--timing-function),
+    outline 250ms var(--timing-function);
+}
+
+.request-field:focus-within .request-input {
+  border-color: var(--accent-color);
+  outline: var(--accent-color);
+}
+
+.request-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill 250ms var(--timing-function);
+}
+
+.request-field:focus-within .request-icon {
+  fill: var(--accent-color);
+}
+
+.request-comment-field {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.request-comment-label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+  transition: transform 250ms var(--timing-function);
+}
+
+.request-comment-field:focus-within .request-comment-label {
+  transform: translate(-12px, -27px);
+}
+
+.request-comment-input:not(:placeholder-shown) + .request-comment-label {
+  transform: translate(-12px, -27px);
+}
+
+textarea {
+  resize: none;
+}
+
+.request-comment-input {
+  display: block;
+  padding-left: 12px;
+  padding-top: 10px;
+  width: 448px;
+  height: 120px;
+  color: var(--primary-text-color);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: border-color 250ms var(--timing-function),
+    outline 250ms var(--timing-function);
+}
+
+.request-comment-field:focus-within .request-comment-input {
+  border-color: var(--accent-color);
+  outline: var(--accent-color);
+}
+
+.request-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.check-icon {
+  display: block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  transition: background-color 250ms var(--timing-function),
+    border 250ms var(--timing-function);
+}
+
+.visually-hidden {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.checkbox-input:focus + .check-icon {
+  border-color: var(--accent-color);
+}
+
+.checkbox-input:checked + .check-icon {
+  background-image: url("../images/whitecheck.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 2px solid var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.checkbox-text {
+  margin-left: 7px;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--primary-text-color);
+}
+
+.conditions-link {
+  color: var(--accent-color);
+}
+
+.request-btn {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+  min-height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  color: var(--secondary-text-color);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
 .warranty,
@@ -527,7 +714,7 @@ a.tel:focus {
   fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: color 250ms var(--timing-function),
+  transition: fill 250ms var(--timing-function),
     border 250ms var(--timing-function);
 }
 
@@ -621,6 +808,73 @@ a.tel:focus {
   background-color: var(--accent-color);
 }
 
+.news-footer {
+  margin-left: 93px;
+}
+
+.news-title {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
+
+.news-mail {
+  margin: 0;
+  padding: 15px 16px;
+  width: 358px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: var(--background-hero-color);
+  transition: border-color 250ms var(--timing-function),
+    outline 250ms var(--timing-function);
+}
+
+.news-mail::placeholder {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.news-mail:focus-within {
+  outline: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.news-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  padding: 10px 28px;
+  width: 200px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--secondary-text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.news-icon {
+  margin-left: 10px;
+  fill: #ffffff;
+}
+
 .address a {
   display: inline-block;
   color: rgba(255, 255, 255, 0.6);
@@ -643,8 +897,6 @@ a.tel:focus {
 a.connection {
   color: var(--secondary-text-color);
 }
-
-/* button */
 
 .button {
   padding: 6px 22px;
