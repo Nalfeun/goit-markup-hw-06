@@ -285,7 +285,7 @@ a.tel:focus {
   height: 581px;
   max-height: 100vh;
   overflow-y: auto;
-  z-index: 5;
+  z-index: 100;
   background-color: var(--background-main-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
