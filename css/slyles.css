@@ -81,10 +81,6 @@ a {
   align-items: center;
 }
 
-.header-page a {
-  display: block;
-}
-
 .site-nav .items,
 .contact .items {
   margin-right: 50px;
